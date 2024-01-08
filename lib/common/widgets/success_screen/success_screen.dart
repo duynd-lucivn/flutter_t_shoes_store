@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:t_store/common/styles/spacing_styles.dart';
 import '../../../utils/constants/sizes.dart';
 import '../../../utils/helpers/helper_functions.dart';
+import '../../styles/spacing_styles.dart';
 
 class SuccessScreen extends StatelessWidget {
   const SuccessScreen(
