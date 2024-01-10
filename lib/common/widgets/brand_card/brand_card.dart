@@ -50,7 +50,7 @@ class TBrandCard extends StatelessWidget {
                     brandTextSize: TextSizes.large,
                   ),
                   Text(
-                    '256 products 256 products 256 products',
+                    '256 products',
                     overflow: TextOverflow.ellipsis,
                     style: Theme.of(context).textTheme.labelMedium,
                   )

@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
+import 'features/personalization/screens/settings/settings.dart';
 import 'features/shop/screens/home/home.dart';
-import 'features/shop/screens/settings/settings.dart';
 import 'features/shop/screens/store/store.dart';
 import 'features/wish_list/wish_list.dart';
 import 'utils/constants/colors.dart';

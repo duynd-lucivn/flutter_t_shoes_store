@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:t_store/features/shop/screens/order/order.dart';
 
 import '../../../../common/widgets/app_bar/app_bar.dart';
 import '../../../../common/widgets/custom_shapes/containers/primary_header_container.dart';
@@ -8,6 +10,7 @@ import '../../../../common/widgets/list_tiles/user_profile_tile.dart';
 import '../../../../common/widgets/texts/section_heading.dart';
 import '../../../../utils/constants/colors.dart';
 import '../../../../utils/constants/sizes.dart';
+import '../address/address.dart';
 
 class SettingsScreen extends StatelessWidget {
   const SettingsScreen({Key? key}) : super(key: key);
@@ -48,18 +51,20 @@ class SettingsScreen extends StatelessWidget {
                   const SizedBox(
                     height: TSizes.spaceBtwSections,
                   ),
-                  const TSettingsMenuTile(
+                  TSettingsMenuTile(
                       icon: Iconsax.safe_home,
                       title: 'My Addresses',
-                      subTitle: 'Set shopping delivery address'),
+                      subTitle: 'Set shopping delivery address',
+                      onTap: () => Get.to(() => const UserAddressScreen())),
                   const TSettingsMenuTile(
                       icon: Iconsax.shopping_cart,
                       title: 'My Cart',
                       subTitle: 'Add, remove products and move to checkout'),
-                  const TSettingsMenuTile(
+                  TSettingsMenuTile(
                       icon: Iconsax.bag_tick,
                       title: 'My Orders',
-                      subTitle: 'In-progress and Completed Orders'),
+                      subTitle: 'In-progress and Completed Orders',
+                      onTap: () => Get.to(() => const OrderScreen())),
                   const TSettingsMenuTile(
                       icon: Iconsax.bank,
                       title: 'Bank Account',

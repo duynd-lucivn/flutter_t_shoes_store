@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../../../../common/widgets/custom_shapes/containers/search_container.dart';
 import '../../../../common/widgets/custom_shapes/containers/primary_header_container.dart';
@@ -9,6 +10,7 @@ import '../../../../common/widgets/texts/section_heading.dart';
 import '../../../../utils/constants/colors.dart';
 import '../../../../utils/constants/image_strings.dart';
 import '../../../../utils/constants/sizes.dart';
+import '../all_products/all_product.dart';
 import 'widgets/home_app_bar.dart';
 import 'widgets/home_categories.dart';
 import 'widgets/promo_slider.dart';
@@ -62,25 +64,19 @@ class HomeScreen extends StatelessWidget {
               child: Column(
                 children: [
                   const TPromoSlider(
-                    banner: [
-                      TImages.promoBanner1,
-                      TImages.promoBanner2,
-                      TImages.promoBanner3
-                    ],
+                    banner: [TImages.promoBanner1, TImages.promoBanner2, TImages.promoBanner3],
                   ),
                   const SizedBox(
                     height: TSizes.spaceBtwSections,
                   ),
                   TSectionHeading(
                     title: 'Popular Products',
-                    onPress: () {},
+                    onPress: () => Get.to(() => const AllProductsScreen()),
                   ),
                   const SizedBox(
                     height: TSizes.spaceBtwItems,
                   ),
-                  TGridLayout(
-                      itemCount: 2,
-                      itemBuilder: (_, index) => const TProductCardVertical()),
+                  TGridLayout(itemCount: 2, itemBuilder: (_, index) => const TProductCardVertical()),
                 ],
               ),
             ),

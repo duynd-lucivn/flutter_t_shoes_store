@@ -10,7 +10,7 @@ class SuccessScreen extends StatelessWidget {
       required this.title,
       required this.subTitle,
       required this.onPressed,
-      required this.buttonTitle})
+      this.buttonTitle = "Continue"})
       : super(key: key);
 
   final String image, title, subTitle, buttonTitle;
