@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:t_store/utils/constants/colors.dart';
+import '../../constants/colors.dart';
 import '../../constants/sizes.dart';
 
 class TTextFormFieldTheme {
@@ -22,7 +22,7 @@ class TTextFormFieldTheme {
       borderRadius: BorderRadius.circular(TSizes.inputFieldRadius),
       borderSide: const BorderSide(width: 1, color: TColors.grey),
     ),
-    focusedBorder:const OutlineInputBorder().copyWith(
+    focusedBorder: const OutlineInputBorder().copyWith(
       borderRadius: BorderRadius.circular(TSizes.inputFieldRadius),
       borderSide: const BorderSide(width: 1, color: TColors.dark),
     ),

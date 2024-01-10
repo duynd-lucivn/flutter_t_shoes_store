@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
-import 'package:t_store/common/widgets/app_bar/app_bar.dart';
-import 'package:t_store/utils/constants/sizes.dart';
 
-import '../../../../utils/helpers/helper_functions.dart';
+import '../../../../common/widgets/app_bar/app_bar.dart';
+import '../../../../utils/constants/sizes.dart';
 
 class AddNewAddressScreen extends StatelessWidget {
   const AddNewAddressScreen({
@@ -11,8 +10,6 @@ class AddNewAddressScreen extends StatelessWidget {
   }) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    final dark = THelperFunctions.isDarkMode(context);
-
     return Scaffold(
       appBar: const TAppBar(
         showBackArrow: true,
@@ -25,16 +22,13 @@ class AddNewAddressScreen extends StatelessWidget {
             child: Column(
               children: [
                 TextFormField(
-                  decoration: const InputDecoration(
-                      prefixIcon: Icon(Iconsax.user), labelText: 'Name'),
+                  decoration: const InputDecoration(prefixIcon: Icon(Iconsax.user), labelText: 'Name'),
                 ),
                 const SizedBox(
                   height: TSizes.spaceBtwInputFields,
                 ),
                 TextFormField(
-                  decoration: const InputDecoration(
-                      prefixIcon: Icon(Iconsax.mobile),
-                      labelText: 'Phone Number'),
+                  decoration: const InputDecoration(prefixIcon: Icon(Iconsax.mobile), labelText: 'Phone Number'),
                 ),
                 const SizedBox(
                   height: TSizes.spaceBtwInputFields,
@@ -43,9 +37,7 @@ class AddNewAddressScreen extends StatelessWidget {
                   children: [
                     Expanded(
                       child: TextFormField(
-                        decoration: const InputDecoration(
-                            prefixIcon: Icon(Iconsax.building_31),
-                            labelText: 'Street'),
+                        decoration: const InputDecoration(prefixIcon: Icon(Iconsax.building_31), labelText: 'Street'),
                       ),
                     ),
                     const SizedBox(
@@ -53,9 +45,7 @@ class AddNewAddressScreen extends StatelessWidget {
                     ),
                     Expanded(
                       child: TextFormField(
-                        decoration: const InputDecoration(
-                            prefixIcon: Icon(Iconsax.code),
-                            labelText: 'Postcode'),
+                        decoration: const InputDecoration(prefixIcon: Icon(Iconsax.code), labelText: 'Postcode'),
                       ),
                     ),
                   ],
@@ -67,9 +57,7 @@ class AddNewAddressScreen extends StatelessWidget {
                   children: [
                     Expanded(
                       child: TextFormField(
-                        decoration: const InputDecoration(
-                            prefixIcon: Icon(Iconsax.building),
-                            labelText: 'City'),
+                        decoration: const InputDecoration(prefixIcon: Icon(Iconsax.building), labelText: 'City'),
                       ),
                     ),
                     const SizedBox(
@@ -77,9 +65,7 @@ class AddNewAddressScreen extends StatelessWidget {
                     ),
                     Expanded(
                       child: TextFormField(
-                        decoration: const InputDecoration(
-                            prefixIcon: Icon(Iconsax.activity),
-                            labelText: 'State'),
+                        decoration: const InputDecoration(prefixIcon: Icon(Iconsax.activity), labelText: 'State'),
                       ),
                     ),
                   ],
@@ -88,8 +74,7 @@ class AddNewAddressScreen extends StatelessWidget {
                   height: TSizes.spaceBtwInputFields,
                 ),
                 TextFormField(
-                  decoration: const InputDecoration(
-                      prefixIcon: Icon(Iconsax.global), labelText: 'Country'),
+                  decoration: const InputDecoration(prefixIcon: Icon(Iconsax.global), labelText: 'Country'),
                 ),
                 const SizedBox(
                   height: TSizes.defaultSpace,

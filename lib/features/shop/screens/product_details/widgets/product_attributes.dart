@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:t_store/common/widgets/chips/choice_chip.dart';
-import 'package:t_store/common/widgets/custom_shapes/containers/rounded_container.dart';
-import 'package:t_store/common/widgets/texts/product_price_text.dart';
-import 'package:t_store/common/widgets/texts/product_title_text.dart';
-import 'package:t_store/common/widgets/texts/section_heading.dart';
-import 'package:t_store/utils/constants/colors.dart';
-import 'package:t_store/utils/constants/sizes.dart';
 
+import '../../../../../common/widgets/chips/choice_chip.dart';
+import '../../../../../common/widgets/custom_shapes/containers/rounded_container.dart';
+import '../../../../../common/widgets/texts/product_price_text.dart';
+import '../../../../../common/widgets/texts/product_title_text.dart';
+import '../../../../../common/widgets/texts/section_heading.dart';
+import '../../../../../utils/constants/colors.dart';
+import '../../../../../utils/constants/sizes.dart';
 import '../../../../../utils/helpers/helper_functions.dart';
 
 class ProductAttributes extends StatelessWidget {
@@ -43,10 +43,7 @@ class ProductAttributes extends StatelessWidget {
                           ),
                           Text(
                             '\$25',
-                            style: Theme.of(context)
-                                .textTheme
-                                .titleSmall!
-                                .apply(decoration: TextDecoration.lineThrough),
+                            style: Theme.of(context).textTheme.titleSmall!.apply(decoration: TextDecoration.lineThrough),
                           ),
                           const SizedBox(
                             width: TSizes.spaceBtwItems,
@@ -60,8 +57,7 @@ class ProductAttributes extends StatelessWidget {
                             title: 'Stock : ',
                             smallSize: true,
                           ),
-                          Text('In stock',
-                              style: Theme.of(context).textTheme.titleMedium),
+                          Text('In stock', style: Theme.of(context).textTheme.titleMedium),
                         ],
                       ),
                     ],
@@ -69,8 +65,7 @@ class ProductAttributes extends StatelessWidget {
                 ],
               ),
               const TProductTitleText(
-                title:
-                    'This is the Description of the Product and it can go up to max 4 lines: ',
+                title: 'This is the Description of the Product and it can go up to max 4 lines: ',
                 smallSize: true,
                 maxLines: 4,
               ),

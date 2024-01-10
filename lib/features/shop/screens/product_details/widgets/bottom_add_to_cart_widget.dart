@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
-import 'package:t_store/common/widgets/icons/t_circular_icon.dart';
-import 'package:t_store/utils/constants/sizes.dart';
 
+import '../../../../../common/widgets/icons/t_circular_icon.dart';
 import '../../../../../utils/constants/colors.dart';
+import '../../../../../utils/constants/sizes.dart';
 import '../../../../../utils/helpers/helper_functions.dart';
 
 class TBottomAddToCart extends StatelessWidget {
@@ -14,8 +14,7 @@ class TBottomAddToCart extends StatelessWidget {
     final dark = THelperFunctions.isDarkMode(context);
 
     return Container(
-      padding: const EdgeInsets.symmetric(
-          horizontal: TSizes.defaultSpace, vertical: TSizes.defaultSpace / 2),
+      padding: const EdgeInsets.symmetric(horizontal: TSizes.defaultSpace, vertical: TSizes.defaultSpace / 2),
       decoration: BoxDecoration(
         color: dark ? TColors.darkerGrey : TColors.light,
         borderRadius: const BorderRadius.only(
@@ -52,9 +51,7 @@ class TBottomAddToCart extends StatelessWidget {
           ElevatedButton(
             onPressed: () {},
             style: ElevatedButton.styleFrom(
-                padding: const EdgeInsets.all(TSizes.md),
-                backgroundColor: TColors.black,
-                side: const BorderSide(color: TColors.black)),
+                padding: const EdgeInsets.all(TSizes.md), backgroundColor: TColors.black, side: const BorderSide(color: TColors.black)),
             child: const Text('Add to Cart'),
           )
         ],

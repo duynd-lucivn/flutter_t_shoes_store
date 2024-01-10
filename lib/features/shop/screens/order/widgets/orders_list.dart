@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
-import 'package:t_store/common/widgets/custom_shapes/containers/rounded_container.dart';
-import 'package:t_store/utils/constants/sizes.dart';
 
+import '../../../../../common/widgets/custom_shapes/containers/rounded_container.dart';
 import '../../../../../utils/constants/colors.dart';
+import '../../../../../utils/constants/sizes.dart';
 import '../../../../../utils/helpers/helper_functions.dart';
 
 class TOrderListItems extends StatelessWidget {
@@ -35,12 +35,7 @@ class TOrderListItems extends StatelessWidget {
                           children: [
                             Text(
                               'Processing',
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .bodyLarge!
-                                  .apply(
-                                      color: TColors.primary,
-                                      fontWeightDelta: 1),
+                              style: Theme.of(context).textTheme.bodyLarge!.apply(color: TColors.primary, fontWeightDelta: 1),
                             ),
                             Text(
                               '07 Nov 2024',
@@ -76,13 +71,11 @@ class TOrderListItems extends StatelessWidget {
                                 children: [
                                   Text(
                                     'Order',
-                                    style:
-                                        Theme.of(context).textTheme.labelMedium,
+                                    style: Theme.of(context).textTheme.labelMedium,
                                   ),
                                   Text(
                                     '[#256f2]',
-                                    style:
-                                        Theme.of(context).textTheme.titleMedium,
+                                    style: Theme.of(context).textTheme.titleMedium,
                                   ),
                                 ],
                               ),
@@ -104,13 +97,11 @@ class TOrderListItems extends StatelessWidget {
                                 children: [
                                   Text(
                                     'Shipping Date',
-                                    style:
-                                        Theme.of(context).textTheme.labelMedium,
+                                    style: Theme.of(context).textTheme.labelMedium,
                                   ),
                                   Text(
                                     '03 Feb 2025',
-                                    style:
-                                        Theme.of(context).textTheme.titleMedium,
+                                    style: Theme.of(context).textTheme.titleMedium,
                                   ),
                                 ],
                               ),

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
-import 'package:t_store/common/widgets/app_bar/app_bar.dart';
-import 'package:t_store/common/widgets/images/t_circular_image.dart';
-import 'package:t_store/common/widgets/texts/section_heading.dart';
-import 'package:t_store/utils/constants/image_strings.dart';
-import 'package:t_store/utils/constants/sizes.dart';
 
+import '../../../../common/widgets/app_bar/app_bar.dart';
+import '../../../../common/widgets/images/t_circular_image.dart';
+import '../../../../common/widgets/texts/section_heading.dart';
+import '../../../../utils/constants/image_strings.dart';
+import '../../../../utils/constants/sizes.dart';
 import 'widgets/profile_menu.dart';
 
 class ProfileScreen extends StatelessWidget {
@@ -32,9 +32,7 @@ class ProfileScreen extends StatelessWidget {
                       width: 80,
                       height: 80,
                     ),
-                    TextButton(
-                        onPressed: () {},
-                        child: const Text('Change Profile Picture')),
+                    TextButton(onPressed: () {}, child: const Text('Change Profile Picture')),
                   ],
                 ),
               ),
@@ -93,8 +91,7 @@ class ProfileScreen extends StatelessWidget {
               Center(
                 child: TextButton(
                   onPressed: () {},
-                  child: const Text('Close Account',
-                      style: TextStyle(color: Colors.red)),
+                  child: const Text('Close Account', style: TextStyle(color: Colors.red)),
                 ),
               )
             ],

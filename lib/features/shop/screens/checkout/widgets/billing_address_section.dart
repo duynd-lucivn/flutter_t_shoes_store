@@ -1,16 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:t_store/common/widgets/texts/section_heading.dart';
-import 'package:t_store/utils/constants/sizes.dart';
 
-import '../../../../../utils/helpers/helper_functions.dart';
+import '../../../../../common/widgets/texts/section_heading.dart';
+import '../../../../../utils/constants/sizes.dart';
 
 class TBillingAddressSection extends StatelessWidget {
   const TBillingAddressSection({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final dark = THelperFunctions.isDarkMode(context);
-
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [

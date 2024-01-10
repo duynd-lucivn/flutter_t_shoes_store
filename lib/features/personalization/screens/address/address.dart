@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
-import 'package:t_store/common/widgets/app_bar/app_bar.dart';
-import 'package:t_store/features/personalization/screens/address/add_new_address.dart';
-import 'package:t_store/features/personalization/screens/address/widgets/single_address.dart';
-import 'package:t_store/utils/constants/colors.dart';
-import 'package:t_store/utils/constants/sizes.dart';
+
+import '../../../../common/widgets/app_bar/app_bar.dart';
+import '../../../../utils/constants/colors.dart';
+import '../../../../utils/constants/sizes.dart';
+import 'add_new_address.dart';
+import 'widgets/single_address.dart';
 
 class UserAddressScreen extends StatelessWidget {
   const UserAddressScreen({Key? key}) : super(key: key);
@@ -22,17 +23,13 @@ class UserAddressScreen extends StatelessWidget {
       ),
       appBar: TAppBar(
         showBackArrow: true,
-        title:
-            Text('Address', style: Theme.of(context).textTheme.headlineSmall),
+        title: Text('Address', style: Theme.of(context).textTheme.headlineSmall),
       ),
       body: const SingleChildScrollView(
         child: Padding(
           padding: EdgeInsets.all(TSizes.defaultSpace),
           child: Column(
-            children: [
-              TSingleAddress(selectedAddress: true),
-              TSingleAddress(selectedAddress: false)
-            ],
+            children: [TSingleAddress(selectedAddress: true), TSingleAddress(selectedAddress: false)],
           ),
         ),
       ),

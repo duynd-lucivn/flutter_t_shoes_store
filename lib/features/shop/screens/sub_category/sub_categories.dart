@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:t_store/common/widgets/app_bar/app_bar.dart';
-import 'package:t_store/common/widgets/images/t_rounded_image.dart';
-import 'package:t_store/common/widgets/texts/section_heading.dart';
-import 'package:t_store/utils/constants/image_strings.dart';
-import 'package:t_store/utils/constants/sizes.dart';
 
+import '../../../../common/widgets/app_bar/app_bar.dart';
+import '../../../../common/widgets/images/t_rounded_image.dart';
 import '../../../../common/widgets/products/product_cards/product_card_horizontal.dart';
+import '../../../../common/widgets/texts/section_heading.dart';
+import '../../../../utils/constants/image_strings.dart';
+import '../../../../utils/constants/sizes.dart';
 
 class SubCategoriesScreen extends StatelessWidget {
   const SubCategoriesScreen({Key? key}) : super(key: key);

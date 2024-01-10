@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
-import 'package:t_store/features/shop/screens/product_details/product_detail.dart';
 
+import '../../../../features/shop/screens/product_details/product_detail.dart';
 import '../../../../utils/constants/colors.dart';
 import '../../../../utils/constants/image_strings.dart';
 import '../../../../utils/constants/sizes.dart';
@@ -49,8 +49,7 @@ class TProductCardVertical extends StatelessWidget {
                     top: 12,
                     child: TRoundedContainer(
                       radius: TSizes.sm,
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: TSizes.sm, vertical: TSizes.xs),
+                      padding: const EdgeInsets.symmetric(horizontal: TSizes.sm, vertical: TSizes.xs),
                       backgroundColor: TColors.secondary.withOpacity(0.8),
                       child: Text(
                         '25%',
@@ -108,10 +107,8 @@ class TProductCardVertical extends StatelessWidget {
                 Container(
                   decoration: const BoxDecoration(
                     color: TColors.dark,
-                    borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(TSizes.cardRadiusMd),
-                        bottomRight:
-                            Radius.circular(TSizes.productImageRadius)),
+                    borderRadius:
+                        BorderRadius.only(topLeft: Radius.circular(TSizes.cardRadiusMd), bottomRight: Radius.circular(TSizes.productImageRadius)),
                   ),
                   child: const SizedBox(
                     width: TSizes.iconLg * 1.2,

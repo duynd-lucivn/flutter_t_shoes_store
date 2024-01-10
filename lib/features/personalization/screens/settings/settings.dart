@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
-import 'package:t_store/features/shop/screens/order/order.dart';
 
 import '../../../../common/widgets/app_bar/app_bar.dart';
 import '../../../../common/widgets/custom_shapes/containers/primary_header_container.dart';
@@ -10,6 +9,7 @@ import '../../../../common/widgets/list_tiles/user_profile_tile.dart';
 import '../../../../common/widgets/texts/section_heading.dart';
 import '../../../../utils/constants/colors.dart';
 import '../../../../utils/constants/sizes.dart';
+import '../../../shop/screens/order/order.dart';
 import '../address/address.dart';
 
 class SettingsScreen extends StatelessWidget {
@@ -27,10 +27,7 @@ class SettingsScreen extends StatelessWidget {
                   TAppBar(
                     title: Text(
                       'Account',
-                      style: Theme.of(context)
-                          .textTheme
-                          .headlineMedium!
-                          .apply(color: TColors.white),
+                      style: Theme.of(context).textTheme.headlineMedium!.apply(color: TColors.white),
                     ),
                   ),
                   const SizedBox(
@@ -56,31 +53,17 @@ class SettingsScreen extends StatelessWidget {
                       title: 'My Addresses',
                       subTitle: 'Set shopping delivery address',
                       onTap: () => Get.to(() => const UserAddressScreen())),
-                  const TSettingsMenuTile(
-                      icon: Iconsax.shopping_cart,
-                      title: 'My Cart',
-                      subTitle: 'Add, remove products and move to checkout'),
+                  const TSettingsMenuTile(icon: Iconsax.shopping_cart, title: 'My Cart', subTitle: 'Add, remove products and move to checkout'),
                   TSettingsMenuTile(
                       icon: Iconsax.bag_tick,
                       title: 'My Orders',
                       subTitle: 'In-progress and Completed Orders',
                       onTap: () => Get.to(() => const OrderScreen())),
+                  const TSettingsMenuTile(icon: Iconsax.bank, title: 'Bank Account', subTitle: 'Withdraw balance to registered bank account'),
+                  const TSettingsMenuTile(icon: Iconsax.discount_shape, title: 'My Coupons', subTitle: 'List of all the discounted coupons'),
+                  const TSettingsMenuTile(icon: Iconsax.notification, title: 'Notification', subTitle: 'Set any kind of notification message'),
                   const TSettingsMenuTile(
-                      icon: Iconsax.bank,
-                      title: 'Bank Account',
-                      subTitle: 'Withdraw balance to registered bank account'),
-                  const TSettingsMenuTile(
-                      icon: Iconsax.discount_shape,
-                      title: 'My Coupons',
-                      subTitle: 'List of all the discounted coupons'),
-                  const TSettingsMenuTile(
-                      icon: Iconsax.notification,
-                      title: 'Notification',
-                      subTitle: 'Set any kind of notification message'),
-                  const TSettingsMenuTile(
-                      icon: Iconsax.security_card,
-                      title: 'Account Privacy',
-                      subTitle: 'Manage data usage and connected accounts'),
+                      icon: Iconsax.security_card, title: 'Account Privacy', subTitle: 'Manage data usage and connected accounts'),
                   const SizedBox(
                     height: TSizes.spaceBtwSections,
                   ),
@@ -91,10 +74,7 @@ class SettingsScreen extends StatelessWidget {
                   const SizedBox(
                     height: TSizes.spaceBtwItems,
                   ),
-                  const TSettingsMenuTile(
-                      icon: Iconsax.document_upload,
-                      title: 'Load Data',
-                      subTitle: 'Upload Data to your Cloud Firebase'),
+                  const TSettingsMenuTile(icon: Iconsax.document_upload, title: 'Load Data', subTitle: 'Upload Data to your Cloud Firebase'),
                   TSettingsMenuTile(
                     icon: Iconsax.location,
                     title: 'Geolocation',

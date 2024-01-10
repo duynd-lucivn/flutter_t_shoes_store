@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:get/get.dart';
-import 'package:t_store/features/shop/controllers/home_controller.dart';
 
 import '../../../../../common/widgets/custom_shapes/containers/circular_container.dart';
 import '../../../../../common/widgets/images/t_rounded_image.dart';
 import '../../../../../utils/constants/colors.dart';
 import '../../../../../utils/constants/sizes.dart';
+import '../../../controllers/home_controller.dart';
 
 class TPromoSlider extends StatelessWidget {
   const TPromoSlider({
@@ -20,13 +20,8 @@ class TPromoSlider extends StatelessWidget {
     return Column(
       children: [
         CarouselSlider(
-          items: banner
-              .map((imageUrl) => TRoundedImage(imageUrl: imageUrl))
-              .toList(),
-          options: CarouselOptions(
-              viewportFraction: 1,
-              onPageChanged: (index, _) =>
-                  controller.updatePageIndicator(index)),
+          items: banner.map((imageUrl) => TRoundedImage(imageUrl: imageUrl)).toList(),
+          options: CarouselOptions(viewportFraction: 1, onPageChanged: (index, _) => controller.updatePageIndicator(index)),
         ),
         const SizedBox(
           height: TSizes.spaceBtwItems,
@@ -40,9 +35,7 @@ class TPromoSlider extends StatelessWidget {
                   TCircularContainer(
                     width: 20,
                     height: 4,
-                    backgroundColor: controller.carousalCurrentIndex.value == i
-                        ? TColors.primary
-                        : TColors.grey,
+                    backgroundColor: controller.carousalCurrentIndex.value == i ? TColors.primary : TColors.grey,
                     margin: const EdgeInsets.only(right: 10),
                   ),
               ],

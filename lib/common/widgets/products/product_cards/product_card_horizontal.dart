@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
-import 'package:t_store/common/widgets/custom_shapes/containers/rounded_container.dart';
-import 'package:t_store/common/widgets/icons/t_circular_icon.dart';
-import 'package:t_store/common/widgets/images/t_rounded_image.dart';
-import 'package:t_store/common/widgets/texts/product_price_text.dart';
-import 'package:t_store/common/widgets/texts/product_title_text.dart';
-import 'package:t_store/utils/constants/image_strings.dart';
-import 'package:t_store/utils/constants/sizes.dart';
 
 import '../../../../utils/constants/colors.dart';
+import '../../../../utils/constants/image_strings.dart';
+import '../../../../utils/constants/sizes.dart';
 import '../../../../utils/helpers/helper_functions.dart';
+import '../../custom_shapes/containers/rounded_container.dart';
+import '../../icons/t_circular_icon.dart';
+import '../../images/t_rounded_image.dart';
+import '../../texts/product_price_text.dart';
+import '../../texts/product_title_text.dart';
 import '../../texts/t_brand_title_text_with_verified_icon.dart';
 
 class TProductCardHorizontal extends StatelessWidget {
@@ -22,9 +22,8 @@ class TProductCardHorizontal extends StatelessWidget {
     return Container(
       width: 310,
       padding: const EdgeInsets.all(1),
-      decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(TSizes.productImageRadius),
-          color: dark ? TColors.darkerGrey : TColors.lightContainer),
+      decoration:
+          BoxDecoration(borderRadius: BorderRadius.circular(TSizes.productImageRadius), color: dark ? TColors.darkerGrey : TColors.lightContainer),
       child: Row(
         children: [
           TRoundedContainer(
@@ -46,14 +45,10 @@ class TProductCardHorizontal extends StatelessWidget {
                   child: TRoundedContainer(
                     radius: TSizes.sm,
                     backgroundColor: TColors.secondary.withOpacity(0.8),
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: TSizes.sm, vertical: TSizes.xs),
+                    padding: const EdgeInsets.symmetric(horizontal: TSizes.sm, vertical: TSizes.xs),
                     child: Text(
                       '25%',
-                      style: Theme.of(context)
-                          .textTheme
-                          .labelLarge!
-                          .apply(color: TColors.black),
+                      style: Theme.of(context).textTheme.labelLarge!.apply(color: TColors.black),
                     ),
                   ),
                 ),
@@ -95,9 +90,7 @@ class TProductCardHorizontal extends StatelessWidget {
                         decoration: const BoxDecoration(
                           color: TColors.dark,
                           borderRadius: BorderRadius.only(
-                              topLeft: Radius.circular(TSizes.cardRadiusMd),
-                              bottomRight:
-                                  Radius.circular(TSizes.productImageRadius)),
+                              topLeft: Radius.circular(TSizes.cardRadiusMd), bottomRight: Radius.circular(TSizes.productImageRadius)),
                         ),
                         child: const SizedBox(
                           width: TSizes.iconLg * 1.2,
