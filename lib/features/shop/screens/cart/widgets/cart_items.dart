@@ -6,8 +6,7 @@ import '../../../../../common/widgets/texts/product_price_text.dart';
 import '../../../../../utils/constants/sizes.dart';
 
 class TCartItems extends StatelessWidget {
-  const TCartItems({Key? key, this.showAddRemoveButtons = true})
-      : super(key: key);
+  const TCartItems({Key? key, this.showAddRemoveButtons = true}) : super(key: key);
 
   final bool showAddRemoveButtons;
   @override
@@ -17,8 +16,9 @@ class TCartItems extends StatelessWidget {
       separatorBuilder: (_, __) => const SizedBox(
         height: TSizes.spaceBtwSections,
       ),
-      itemCount: 2,
+      itemCount: 4,
       itemBuilder: (_, index) => Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const TCartItem(),
           if (showAddRemoveButtons)
@@ -31,9 +31,6 @@ class TCartItems extends StatelessWidget {
               children: [
                 Row(
                   children: [
-                    SizedBox(
-                      width: 70,
-                    ),
                     TProductQuantityWithAddRemoveButton(),
                   ],
                 ),

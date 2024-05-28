@@ -55,14 +55,8 @@ class UserReviewCard extends StatelessWidget {
           trimMode: TrimMode.Line,
           trimCollapsedText: ' Show more',
           trimExpandedText: ' Show less',
-          moreStyle: TextStyle(
-              fontSize: 14,
-              fontWeight: FontWeight.bold,
-              color: TColors.primary),
-          lessStyle: TextStyle(
-              fontSize: 14,
-              fontWeight: FontWeight.bold,
-              color: TColors.primary),
+          moreStyle: TextStyle(fontSize: 14, fontWeight: FontWeight.bold, color: TColors.primary),
+          lessStyle: TextStyle(fontSize: 14, fontWeight: FontWeight.bold, color: TColors.primary),
         ),
         const SizedBox(
           height: TSizes.spaceBtwItems,
@@ -76,10 +70,8 @@ class UserReviewCard extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text("G's store",
-                        style: Theme.of(context).textTheme.titleMedium),
-                    Text('09 Jan, 2024',
-                        style: Theme.of(context).textTheme.bodyMedium),
+                    Text("G's store", style: Theme.of(context).textTheme.titleMedium),
+                    Text('09 Jan, 2024', style: Theme.of(context).textTheme.bodyMedium),
                   ],
                 ),
                 const SizedBox(
@@ -91,19 +83,16 @@ class UserReviewCard extends StatelessWidget {
                   trimMode: TrimMode.Line,
                   trimCollapsedText: ' Show more',
                   trimExpandedText: ' Show less',
-                  moreStyle: TextStyle(
-                      fontSize: 14,
-                      fontWeight: FontWeight.bold,
-                      color: TColors.primary),
-                  lessStyle: TextStyle(
-                      fontSize: 14,
-                      fontWeight: FontWeight.bold,
-                      color: TColors.primary),
+                  moreStyle: TextStyle(fontSize: 14, fontWeight: FontWeight.bold, color: TColors.primary),
+                  lessStyle: TextStyle(fontSize: 14, fontWeight: FontWeight.bold, color: TColors.primary),
                 ),
               ],
             ),
           ),
-        )
+        ),
+        const SizedBox(
+          height: TSizes.spaceBtwItems,
+        ),
       ],
     );
   }
