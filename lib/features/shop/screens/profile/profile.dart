@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:t_store/data/repositories/authentication/authentication_repository.dart';
 
 import '../../../../common/widgets/app_bar/app_bar.dart';
 import '../../../../common/widgets/images/t_circular_image.dart';
@@ -90,7 +91,7 @@ class ProfileScreen extends StatelessWidget {
               ),
               Center(
                 child: TextButton(
-                  onPressed: () {},
+                  onPressed: () => AuthenticationRepository.instance.logout(),
                   child: const Text('Close Account', style: TextStyle(color: Colors.red)),
                 ),
               )

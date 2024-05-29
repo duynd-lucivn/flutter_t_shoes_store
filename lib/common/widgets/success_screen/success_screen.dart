@@ -5,12 +5,7 @@ import '../../styles/spacing_styles.dart';
 
 class SuccessScreen extends StatelessWidget {
   const SuccessScreen(
-      {Key? key,
-      required this.image,
-      required this.title,
-      required this.subTitle,
-      required this.onPressed,
-      this.buttonTitle = "Continue"})
+      {Key? key, required this.image, required this.title, required this.subTitle, required this.onPressed, this.buttonTitle = "Continue"})
       : super(key: key);
 
   final String image, title, subTitle, buttonTitle;
