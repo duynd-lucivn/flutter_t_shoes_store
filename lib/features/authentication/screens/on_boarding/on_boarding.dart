@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../../../authentication/controllers/on_boarding_controller.dart';
+import '../../controllers/onboarding/on_boarding_controller.dart';
 import '../../../../../utils/constants/image_strings.dart';
 import '../../../../../utils/constants/text_strings.dart';
 import 'widgets/on_boarding_next_button.dart';

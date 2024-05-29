@@ -4,7 +4,7 @@ import '../../../../../utils/constants/colors.dart';
 import '../../../../../utils/constants/sizes.dart';
 import '../../../../../utils/device/device_utility.dart';
 import '../../../../../utils/helpers/helper_functions.dart';
-import '../../../controllers/on_boarding_controller.dart';
+import '../../../controllers/onboarding/on_boarding_controller.dart';
 
 class OnBoardingNextButton extends StatelessWidget {
   const OnBoardingNextButton({
@@ -23,9 +23,7 @@ class OnBoardingNextButton extends StatelessWidget {
           OnBoardingController.instance.nextPage();
           //  print(OnBoardingController.instance.currentPageIndex);
         },
-        style: ElevatedButton.styleFrom(
-            shape: const CircleBorder(),
-            backgroundColor: dark ? TColors.primary : TColors.black),
+        style: ElevatedButton.styleFrom(shape: const CircleBorder(), backgroundColor: dark ? TColors.primary : TColors.black),
         child: const Icon(Iconsax.arrow_right_3),
       ),
     );
