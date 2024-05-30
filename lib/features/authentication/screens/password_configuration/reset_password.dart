@@ -1,14 +1,18 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:t_store/features/authentication/controllers/forget_password/forget_password_controller.dart';
+import 'package:t_store/features/authentication/screens/login/login.dart';
 
 import '../../../../utils/constants/image_strings.dart';
 import '../../../../utils/constants/sizes.dart';
 import '../../../../utils/constants/text_strings.dart';
 import '../../../../utils/helpers/helper_functions.dart';
 
-class ResetPassword extends StatelessWidget {
-  const ResetPassword({Key? key}) : super(key: key);
+class ResetPasswordScreen extends StatelessWidget {
+  const ResetPasswordScreen({Key? key, required this.email}) : super(key: key);
+
+  final String email;
 
   @override
   Widget build(BuildContext context) {
@@ -48,7 +52,7 @@ class ResetPassword extends StatelessWidget {
             SizedBox(
               width: double.infinity,
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () => Get.offAll(() => LoginScreen()),
                 child: const Text(TTexts.done),
               ),
             ),
@@ -58,7 +62,10 @@ class ResetPassword extends StatelessWidget {
             SizedBox(
               width: double.infinity,
               child: TextButton(
-                onPressed: () {},
+                onPressed: () {
+                  FocusManager.instance.primaryFocus?.unfocus();
+                  ForgetPasswordController.instance.reSendPasswordResetEmail(email);
+                },
                 child: const Text(TTexts.resendEmail),
               ),
             ),

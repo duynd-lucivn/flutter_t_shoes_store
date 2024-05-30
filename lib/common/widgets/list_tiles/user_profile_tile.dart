@@ -30,7 +30,7 @@ class TUserProfileTile extends StatelessWidget {
         style: Theme.of(context).textTheme.bodyMedium!.apply(color: TColors.white),
       ),
       trailing: IconButton(
-          onPressed: () => Get.to(const ProfileScreen()),
+          onPressed: () => Get.to(()=>const ProfileScreen()),
           icon: const Icon(
             Iconsax.edit,
             color: TColors.white,
