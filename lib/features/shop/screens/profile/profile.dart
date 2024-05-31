@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
-import 'package:t_store/data/repositories/authentication/authentication_repository.dart';
 import 'package:t_store/features/personalization/controllers/user/user_controller.dart';
 import 'package:t_store/features/shop/screens/profile/widgets/change_name.dart';
 import 'package:t_store/utils/popups/shimmer.dart';
@@ -18,7 +17,7 @@ class ProfileScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final controller = Get.put(UserController());
+    final controller = UserController.instance;
 
     return Scaffold(
       appBar: const TAppBar(
@@ -34,12 +33,23 @@ class ProfileScreen extends StatelessWidget {
                 width: double.infinity,
                 child: Column(
                   children: [
-                    const TCircularImage(
-                      image: TImages.user,
-                      width: 80,
-                      height: 80,
-                    ),
-                    TextButton(onPressed: () {}, child: const Text('Change Profile Picture')),
+                    Obx(() {
+                      final networkImage = controller.user.value.profilePicture;
+                      final image = networkImage.isNotEmpty ? networkImage : TImages.user;
+                      return controller.imageUploading.value
+                          ? const TShimmerEffect(
+                              width: 80,
+                              height: 80,
+                              radius: 80,
+                            )
+                          : TCircularImage(
+                              isNetworkImage: networkImage.isNotEmpty,
+                              image: image,
+                              width: 80,
+                              height: 80,
+                            );
+                    }),
+                    TextButton(onPressed: () => controller.uploadUserProfilePicture(), child: const Text('Change Profile Picture')),
                   ],
                 ),
               ),

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:t_store/data/repositories/authentication/authentication_repository.dart';
-import 'package:t_store/features/shop/screens/profile/profile.dart';
 
 import '../../../../common/widgets/app_bar/app_bar.dart';
 import '../../../../common/widgets/custom_shapes/containers/primary_header_container.dart';

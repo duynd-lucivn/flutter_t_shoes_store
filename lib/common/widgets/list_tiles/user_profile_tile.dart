@@ -17,10 +17,13 @@ class TUserProfileTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final controller = Get.put(UserController());
-    return Obx(
-      () => ListTile(
-        leading: const TCircularImage(
-          image: TImages.user,
+    return Obx(() {
+      final networkImage = controller.user.value.profilePicture;
+      final image = networkImage.isNotEmpty ? networkImage : TImages.user;
+      return ListTile(
+        leading: TCircularImage(
+          isNetworkImage: networkImage.isNotEmpty,
+          image: image,
           width: 50,
           height: 50,
           padding: 0,
@@ -39,7 +42,7 @@ class TUserProfileTile extends StatelessWidget {
               Iconsax.edit,
               color: TColors.white,
             )),
-      ),
-    );
+      );
+    });
   }
 }
