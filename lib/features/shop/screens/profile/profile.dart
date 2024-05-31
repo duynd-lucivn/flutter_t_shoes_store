@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:t_store/data/repositories/authentication/authentication_repository.dart';
+import 'package:t_store/features/personalization/controllers/user/user_controller.dart';
+import 'package:t_store/features/shop/screens/profile/widgets/change_name.dart';
+import 'package:t_store/utils/popups/shimmer.dart';
 
 import '../../../../common/widgets/app_bar/app_bar.dart';
 import '../../../../common/widgets/images/t_circular_image.dart';
@@ -14,6 +18,8 @@ class ProfileScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(UserController());
+
     return Scaffold(
       appBar: const TAppBar(
         showBackArrow: true,
@@ -49,31 +55,56 @@ class ProfileScreen extends StatelessWidget {
                 showActionButton: false,
               ),
               const SizedBox(
-                height: TSizes.spaceBtwItems,
+                height: TSizes.spaceBtwInputFields,
               ),
+              Obx(() {
+                if (controller.profileLoading.value) {
+                  return const TShimmerEffect(
+                    width: 80,
+                    height: 15,
+                  );
+                } else {
+                  return TProfileMenu(
+                    onPressed: () => Get.to(() => const ChangeName()),
+                    title: 'Name',
+                    value: controller.user.value.fullName,
+                  );
+                }
+              }),
               TProfileMenu(
                 onPressed: () {},
-                title: 'Name',
-                value: 'Newbie',
+                title: 'User Name ',
+                value: controller.user.value.userName,
+                icon: Iconsax.copy,
+              ),
+              const SizedBox(
+                height: TSizes.spaceBtwItems / 2,
+              ),
+              const Divider(),
+              const SizedBox(
+                height: TSizes.spaceBtwItems,
+              ),
+              const TSectionHeading(
+                title: 'Personal information',
+                showActionButton: false,
               ),
               const SizedBox(
                 height: TSizes.spaceBtwItems,
               ),
               TProfileMenu(
                 onPressed: () {},
-                title: 'User ID ',
-                value: '45678',
-                icon: Iconsax.copy,
+                title: 'User ID',
+                value: controller.user.value.id,
               ),
               TProfileMenu(
                 onPressed: () {},
                 title: 'E-mail',
-                value: 'newbie@study.com',
+                value: controller.user.value.email,
               ),
               TProfileMenu(
                 onPressed: () {},
                 title: 'Phone Number',
-                value: '+849******88',
+                value: controller.user.value.phoneNumber,
               ),
               TProfileMenu(
                 onPressed: () {},
@@ -91,7 +122,7 @@ class ProfileScreen extends StatelessWidget {
               ),
               Center(
                 child: TextButton(
-                  onPressed: () => AuthenticationRepository.instance.logout(),
+                  onPressed: () => controller.deleteAccountWarningPopup(),
                   child: const Text('Close Account', style: TextStyle(color: Colors.red)),
                 ),
               )

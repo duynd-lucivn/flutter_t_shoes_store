@@ -38,6 +38,7 @@ class SignUpController extends GetxController {
       }
 
       if (!privacyPolicy.value) {
+        TFullScreenLoader.stopLoading();
         TLoaders.warningSnackBar(title: 'Accept Privacy Policy', message: 'In order to');
         return;
       }
