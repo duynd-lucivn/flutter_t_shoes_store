@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:t_store/features/shop/controllers/category_controller.dart';
 
 import '../../../../common/widgets/app_bar/app_bar.dart';
 import '../../../../common/widgets/app_bar/tab_bar.dart';
@@ -20,9 +21,9 @@ class StoreScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final dark = THelperFunctions.isDarkMode(context);
-
+    final categories = CategoryController.instance.featuredCategories;
     return DefaultTabController(
-      length: 5,
+      length: categories.length,
       child: Scaffold(
         appBar: TAppBar(
           title: const Text('Store'),
@@ -72,35 +73,16 @@ class StoreScreen extends StatelessWidget {
                     ],
                   ),
                 ),
-                bottom: const TTabBar(
-                  tabs: [
-                    Tab(
-                      child: Text('Sports'),
-                    ),
-                    Tab(
-                      child: Text('Furniture'),
-                    ),
-                    Tab(
-                      child: Text('Electronics'),
-                    ),
-                    Tab(
-                      child: Text('Clothes'),
-                    ),
-                    Tab(
-                      child: Text('Cosmetics'),
-                    ),
-                  ],
-                ),
+                bottom: TTabBar(
+                    tabs: categories
+                        .map((category) => Tab(
+                              child: Text(category.name),
+                            ))
+                        .toList()),
               ),
             ];
           },
-          body: const TabBarView(children: [
-            TCategoryTab(),
-            TCategoryTab(),
-            TCategoryTab(),
-            TCategoryTab(),
-            TCategoryTab(),
-          ]),
+          body: TabBarView(children: categories.map((category) => TCategoryTab(category: category)).toList()),
         ),
       ),
     );

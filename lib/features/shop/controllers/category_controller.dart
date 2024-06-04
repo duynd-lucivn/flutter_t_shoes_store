@@ -1,0 +1,36 @@
+import 'dart:developer';
+
+import 'package:get/get.dart';
+import 'package:t_store/data/repositories/categories/category_repository.dart';
+import 'package:t_store/features/shop/models/category_model.dart';
+import 'package:t_store/utils/popups/loaders.dart';
+
+class CategoryController extends GetxController {
+  static CategoryController get instance => Get.find();
+
+  final isLoading = false.obs;
+  final _categoryRepository = Get.put(CategoryRepository());
+  RxList<CategoryModel> allCategories = <CategoryModel>[].obs;
+  RxList<CategoryModel> featuredCategories = <CategoryModel>[].obs;
+
+  @override
+  void onInit() {
+    fetchCategories();
+    super.onInit();
+  }
+
+  Future<void> fetchCategories() async {
+    try {
+      isLoading.value = true;
+      final categories = await _categoryRepository.getAllCategories();
+
+      allCategories.assignAll(categories);
+      log("aaa ${allCategories.first.name}");
+      featuredCategories.assignAll(allCategories.where((category) => category.isFeature && category.parentId.isEmpty).take(8).toList());
+    } catch (e) {
+      TLoaders.errorSnackBar(title: 'Oh Error', message: e.toString());
+    } finally {
+      isLoading.value = false;
+    }
+  }
+}
