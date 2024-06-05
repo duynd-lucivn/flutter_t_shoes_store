@@ -9,8 +9,8 @@ import '../../common/widgets/products/product_cards/product_card_vertical.dart';
 import '../../utils/constants/sizes.dart';
 import '../shop/screens/home/home.dart';
 
-class FavouriteScreen extends StatelessWidget {
-  const FavouriteScreen({Key? key}) : super(key: key);
+class FavoriteScreen extends StatelessWidget {
+  const FavoriteScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -31,11 +31,7 @@ class FavouriteScreen extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.all(TSizes.defaultSpace),
           child: Column(
-            children: [
-              TGridLayout(
-                  itemCount: 4,
-                  itemBuilder: (_, index) => const TProductCardVertical())
-            ],
+            children: [TGridLayout(itemCount: 4, itemBuilder: (_, index) => const TProductCardVertical())],
           ),
         ),
       ),

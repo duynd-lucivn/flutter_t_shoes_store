@@ -1,12 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:t_store/data/repositories/banners/banners_repository.dart';
-import 'package:t_store/data/repositories/categories/category_repository.dart';
 import 'package:t_store/features/personalization/models/banner_model.dart';
 import 'package:t_store/utils/popups/loaders.dart';
 
-class HomeController extends GetxController {
-  static HomeController get instance => Get.find();
+class BannerController extends GetxController {
+  static BannerController get instance => Get.find();
 
   /// Variables
   final pageController = PageController();
@@ -17,6 +16,11 @@ class HomeController extends GetxController {
 
   /// Update Current Index when Page Scroll
   void updatePageIndicator(index) => carousalCurrentIndex.value = index;
+  @override
+  void onInit() {
+    fetchBanner();
+    super.onInit();
+  }
 
   Future<void> fetchBanner() async {
     try {

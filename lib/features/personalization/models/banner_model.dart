@@ -1,45 +1,37 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:t_store/utils/formatters/formatter.dart';
 
 class BannerModel {
   final String imageUrl;
 
   final String targetScreen;
 
-  bool active;
+  final bool active;
 
   BannerModel({
     required this.imageUrl,
     required this.targetScreen,
-    this.active = false,
+    required this.active,
   });
 
   static BannerModel empty() => BannerModel(imageUrl: '', targetScreen: '', active: false);
 
-  // Map<String, dynamic> toJson() {
-  //   return {
-  //     'firstName': firstName,
-  //     'email': email,
-  //     'lastName': lastName,
-  //     'BannerName': BannerName,
-  //     'phoneNumber': phoneNumber,
-  //     'profilePicture': profilePicture,
-  //   };
-  // }
+  Map<String, dynamic> toJson() {
+    return {
+      'ImageUrl': imageUrl,
+      'TargetScreen': targetScreen,
+      'Active': active,
+    };
+  }
 
-  // factory BannerModel.fromSnapshot(DocumentSnapshot<Map<String, dynamic>> document) {
-  //   if (document.data() != null) {
-  //     final data = document.data()!;
-  //     return BannerModel(
-  //       id: document.id,
-  //       firstName: data['firstName'] ?? '',
-  //       email: data['email'] ?? '',
-  //       lastName: data['lastName'] ?? '',
-  //       BannerName: data['BannerName'] ?? '',
-  //       phoneNumber: data['phoneNumber'],
-  //       profilePicture: data['profilePicture'],
-  //     );
-  //   }
-  //   return BannerModel.empty();
-  // }
+  factory BannerModel.fromSnapshot(DocumentSnapshot<Map<String, dynamic>> document) {
+    if (document.data() != null) {
+      final data = document.data()!;
+      return BannerModel(
+        imageUrl: data['ImageUrl'] ?? '',
+        targetScreen: data['TargetScreen'] ?? '',
+        active: data['Active'] ?? false,
+      );
+    }
+    return BannerModel.empty();
+  }
 }

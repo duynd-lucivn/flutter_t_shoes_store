@@ -32,11 +32,10 @@ class TVerticalImageText extends StatelessWidget {
           children: [
             TCircularImage(
               image: image,
-              fit: BoxFit.fitWidth,
+              fit: BoxFit.fill,
               padding: TSizes.sm * 1.4,
-              isNetworkImage: isNetworkImage,
+              isNetworkImage: true,
               backgroundColor: backgroundColor,
-              overlayColor: THelperFunctions.isDarkMode(context) ? TColors.light : TColors.dark,
             ),
             const SizedBox(
               height: TSizes.spaceBtwItems / 2,

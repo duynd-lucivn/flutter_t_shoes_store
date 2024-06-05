@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
+import 'package:t_store/routes/app_routes.dart';
 import 'bindings/general_bindings.dart';
 import 'features/authentication/screens/on_boarding/on_boarding.dart';
 import 'utils/constants/text_strings.dart';
@@ -18,6 +19,7 @@ class App extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       initialBinding: GeneralBindings(),
       home: const OnBoardingScreen(),
+      getPages: AppRoutes.pages,
     );
   }
 }

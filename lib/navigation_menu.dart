@@ -23,12 +23,9 @@ class NavigationMenu extends StatelessWidget {
           height: 80,
           elevation: 0,
           selectedIndex: controller.selectedIndex.value,
-          onDestinationSelected: (index) =>
-              controller.selectedIndex.value = index,
+          onDestinationSelected: (index) => controller.selectedIndex.value = index,
           backgroundColor: dark ? TColors.black : TColors.white,
-          indicatorColor: dark
-              ? TColors.white.withOpacity(0.1)
-              : TColors.black.withOpacity(0.1),
+          indicatorColor: dark ? TColors.white.withOpacity(0.1) : TColors.black.withOpacity(0.1),
           destinations: const [
             NavigationDestination(icon: Icon(Iconsax.home), label: 'Home'),
             NavigationDestination(icon: Icon(Iconsax.shop), label: 'Store'),
@@ -44,10 +41,5 @@ class NavigationMenu extends StatelessWidget {
 
 class NavigationController extends GetxController {
   final Rx<int> selectedIndex = 0.obs;
-  final screens = [
-    const HomeScreen(),
-    const StoreScreen(),
-    const FavouriteScreen(),
-    const SettingsScreen()
-  ];
+  final screens = [const HomeScreen(), const StoreScreen(), const FavoriteScreen(), const SettingsScreen()];
 }
