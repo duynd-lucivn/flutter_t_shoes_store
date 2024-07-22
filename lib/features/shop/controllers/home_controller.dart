@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:t_store/data/repositories/banners/banners_repository.dart';
-import 'package:t_store/data/repositories/categories/category_repository.dart';
 import 'package:t_store/features/personalization/models/banner_model.dart';
 import 'package:t_store/utils/popups/loaders.dart';
 

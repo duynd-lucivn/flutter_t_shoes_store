@@ -47,7 +47,7 @@ class TCircularImage extends StatelessWidget {
                     height: 55,
                     radius: 55,
                   ),
-                  errorWidget: (context, url, error) => Icon(Icons.error),
+                  errorWidget: (context, url, error) => const Icon(Icons.error),
                 )
               : Image(
                   image: AssetImage(image) as ImageProvider,

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
-
+import 'package:get/get.dart';
+import 'package:t_store/features/personalization/controllers/product/product_controller.dart';
 import '../../../../utils/constants/sizes.dart';
 import '../../layouts/grid_layout.dart';
 import '../product_cards/product_card_vertical.dart';
@@ -12,19 +13,14 @@ class TSortableProducts extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(ProductController());
+
     return Column(
       children: [
         DropdownButtonFormField(
           onChanged: (value) {},
           decoration: const InputDecoration(prefixIcon: Icon(Iconsax.sort)),
-          items: [
-            'Name',
-            'Higher Price',
-            'Lower Price',
-            'Sale',
-            'Newest',
-            'Popularity'
-          ]
+          items: ['Name', 'Higher Price', 'Lower Price', 'Sale', 'Newest', 'Popularity']
               .map((option) => DropdownMenuItem(
                     value: option,
                     child: Text(option),
@@ -36,7 +32,9 @@ class TSortableProducts extends StatelessWidget {
         ),
         TGridLayout(
             itemCount: 8,
-            itemBuilder: (_, index) => const TProductCardVertical())
+            itemBuilder: (_, index) => TProductCardVertical(
+                  product: controller.featuredProducts[index],
+                ))
       ],
     );
   }

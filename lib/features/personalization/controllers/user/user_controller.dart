@@ -158,7 +158,6 @@ class UserController extends GetxController {
         TLoaders.successSnackBar(title: 'Congratulations', message: 'Your Profile Image has been updated!');
       }
     } catch (e) {
-      print(e);
       TLoaders.errorSnackBar(title: 'OhSnap', message: 'Something went wrong:$e');
     } finally {
       imageUploading.value = false;

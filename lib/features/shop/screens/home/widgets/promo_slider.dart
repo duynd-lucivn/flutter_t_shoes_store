@@ -22,7 +22,7 @@ class TPromoSlider extends StatelessWidget {
       if (controller.isLoading.value) return const TShimmerEffect(width: double.infinity, height: 190);
 
       if (controller.banners.isEmpty) {
-        return Center(
+        return const Center(
           child: Text('No Data Found'),
         );
       } else {

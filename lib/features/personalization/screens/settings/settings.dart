@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:t_store/data/repositories/authentication/authentication_repository.dart';
+import 'package:t_store/features/shop/screens/upload/upload.dart';
 
 import '../../../../common/widgets/app_bar/app_bar.dart';
 import '../../../../common/widgets/custom_shapes/containers/primary_header_container.dart';
@@ -79,7 +80,7 @@ class SettingsScreen extends StatelessWidget {
                       icon: Iconsax.document_upload,
                       title: 'Load Data',
                       subTitle: 'Upload Data to your Cloud Firebase',
-                      onTap: () => AuthenticationRepository.instance.logout()),
+                      onTap: () => Get.to(() => const UploadScreen())),
                   TSettingsMenuTile(
                     icon: Iconsax.location,
                     title: 'Geolocation',
@@ -98,6 +99,8 @@ class SettingsScreen extends StatelessWidget {
                     subTitle: 'Set image quality to be seen',
                     trailing: Switch(value: false, onChanged: (value) {}),
                   ),
+                  TSettingsMenuTile(
+                      icon: Iconsax.logout, title: 'Logout', subTitle: 'Logout', onTap: () => AuthenticationRepository.instance.logout()),
                 ],
               ),
             )

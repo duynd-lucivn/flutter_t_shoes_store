@@ -1,5 +1,4 @@
 import 'package:t_store/features/personalization/models/banner_model.dart';
-import 'package:t_store/features/personalization/models/user_model.dart';
 import 'package:t_store/utils/constants/image_strings.dart';
 
 class TDummyData {

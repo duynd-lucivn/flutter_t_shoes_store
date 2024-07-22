@@ -3,7 +3,6 @@ import 'package:t_store/common/widgets/images/t_circular_image.dart';
 
 import '../../../../utils/constants/colors.dart';
 import '../../../utils/constants/sizes.dart';
-import '../../../utils/helpers/helper_functions.dart';
 
 class TVerticalImageText extends StatelessWidget {
   const TVerticalImageText({
@@ -22,7 +21,7 @@ class TVerticalImageText extends StatelessWidget {
   final bool isNetworkImage;
   @override
   Widget build(BuildContext context) {
-    final dark = THelperFunctions.isDarkMode(context);
+    //final dark = THelperFunctions.isDarkMode(context);
 
     return GestureDetector(
       onTap: onTap,

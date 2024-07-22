@@ -7,12 +7,16 @@ import '../../../../../common/widgets/products/product_cards/product_card_vertic
 import '../../../../../common/widgets/texts/section_heading.dart';
 import '../../../../../utils/constants/image_strings.dart';
 import '../../../../../utils/constants/sizes.dart';
+import 'package:get/get.dart';
+import 'package:t_store/features/personalization/controllers/product/product_controller.dart';
 
 class TCategoryTab extends StatelessWidget {
   const TCategoryTab({Key? key, required this.category}) : super(key: key);
   final CategoryModel category;
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(ProductController());
+
     return ListView(
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
@@ -31,7 +35,11 @@ class TCategoryTab extends StatelessWidget {
               const SizedBox(
                 height: TSizes.spaceBtwItems,
               ),
-              TGridLayout(itemCount: 4, itemBuilder: (_, index) => const TProductCardVertical()),
+              TGridLayout(
+                  itemCount: 4,
+                  itemBuilder: (_, index) => TProductCardVertical(
+                        product: controller.featuredProducts[index],
+                      )),
               const SizedBox(
                 height: TSizes.spaceBtwItems,
               ),

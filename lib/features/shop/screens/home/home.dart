@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
+import 'package:t_store/common/widgets/shimmers/vertical_product_shimmer.dart';
+import 'package:t_store/features/personalization/controllers/product/product_controller.dart';
 import '../../../../common/widgets/custom_shapes/containers/search_container.dart';
 import '../../../../common/widgets/custom_shapes/containers/primary_header_container.dart';
 import '../../../../common/widgets/layouts/grid_layout.dart';
 import '../../../../common/widgets/products/product_cards/product_card_vertical.dart';
 import '../../../../common/widgets/texts/section_heading.dart';
-
 import '../../../../utils/constants/colors.dart';
-import '../../../../utils/constants/image_strings.dart';
 import '../../../../utils/constants/sizes.dart';
 import '../all_products/all_product.dart';
 import 'widgets/home_app_bar.dart';
@@ -20,6 +19,7 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(ProductController());
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
@@ -74,7 +74,23 @@ class HomeScreen extends StatelessWidget {
                   const SizedBox(
                     height: TSizes.spaceBtwItems,
                   ),
-                  TGridLayout(itemCount: 2, itemBuilder: (_, index) => const TProductCardVertical()),
+                  Obx(() {
+                    if (controller.isLoading.value) return const TVerticalProductShimmer();
+
+                    if (controller.featuredProducts.isEmpty) {
+                      return Center(
+                        child: Text(
+                          'No Data Found!',
+                          style: Theme.of(context).textTheme.bodyMedium,
+                        ),
+                      );
+                    }
+                    return TGridLayout(
+                        itemCount: 2,
+                        itemBuilder: (_, index) => TProductCardVertical(
+                              product: controller.featuredProducts[index],
+                            ));
+                  }),
                 ],
               ),
             ),

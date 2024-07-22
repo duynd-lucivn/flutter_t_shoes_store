@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:get/get.dart';
 import 'package:t_store/data/repositories/categories/category_repository.dart';
 import 'package:t_store/features/shop/models/category_model.dart';

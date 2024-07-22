@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:readmore/readmore.dart';
+import 'package:t_store/features/personalization/models/product_model.dart';
 
 import '../../../../common/widgets/texts/section_heading.dart';
 import '../../../../utils/constants/sizes.dart';
@@ -13,7 +14,9 @@ import 'widgets/product_meta_data.dart';
 import 'widgets/rating_share_widget.dart';
 
 class ProductDetailScreen extends StatelessWidget {
-  const ProductDetailScreen({Key? key}) : super(key: key);
+  const ProductDetailScreen({Key? key, required this.product}) : super(key: key);
+
+  final ProductModel product;
 
   @override
   Widget build(BuildContext context) {
